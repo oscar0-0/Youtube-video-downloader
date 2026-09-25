@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT-Downloader | Simple & Fast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-200 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-white tracking-tight mb-2">
+                YT<span class="text-red-500">Downloader</span>
+            </h1>
+            <p class="text-slate-400">Download your favorite content in high quality</p>
+        </header>
+        <main class="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+            <div class="p-6 sm:p-8">
+                <div id="warning-banner" class="hidden mb-6 p-3 bg-amber-900/30 border border-amber-700 text-amber-200 text-sm rounded-lg flex items-start gap-3">
+                    <span class="text-xl">⚠️</span>
+                    <p id="warning-text"></p>
+                </div>
+                <div id="step-input" class="space-y-4">
+                    <div class="relative group">
+                        <input type="text" id="url-input" 
+                            class="w-full bg-slate-950 border border-slate-700 rounded-xl py-4 px-5 text-white placeholder-slate-500 outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all"
+                            placeholder="Paste YouTube URL here...">
+                    </div>
+                    <button id="fetch-btn" class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                        <span>Fetch Video</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="loading" class="hidden py-12 text-center space-y-4">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-slate-700 border-t-red-500"></div>
+                    <p class="text-slate-400 animate-pulse">Analyzing video formats...</p>
+                </div>
+                <div id="options-section" class="hidden space-y-6">
+                    <h2 class="text-lg font-medium text-slate-300 text-center">Choose Quality</h2>
+                    <div id="quality-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Options will be injected here by JS -->
+                    </div>
+                </div>
+                <div id="download-section" class="hidden py-8 space-y-6 text-center">
+                    <div class="relative h-4 w-full bg-slate-800 rounded-full overflow-hidden">
+                        <div id="progress-fill" class="absolute top-0 left-0 h-full bg-red-600 transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-sm font-mono">
+                        <span id="status-message" class="text-slate-400">Downloading...</span>
+                        <span id="progress-text" class="text-white font-bold">0%</span>
+                    </div>
+                </div>
+                <div id="success-section" class="hidden py-8 text-center space-y-4">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-green-500/20 text-green-500 rounded-full text-3xl mb-2">✓</div>
+                    <h3 class="text-xl font-bold text-white">Ready for Download!</h3>
+                    <a id="download-link" href="#" target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-xl transition-all active:scale-95">
+                        Save File to Device
+                    </a>
+                    <button onclick="location.reload()" class="block w-full text-sm text-slate-500 hover:text-slate-300 transition-colors">Download another video</button>
+                </div>
+                <div id="error-section" class="hidden py-8 text-center space-y-4">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 text-red-500 rounded-full text-3xl mb-2">✕</div>
+                    <h3 class="text-xl font-bold text-white">Something went wrong</h3>
+                    <p id="error-message" class="text-slate-400 text-sm px-4"></p>
+                    <button onclick="location.reload()" class="text-red-500 font-medium hover:underline">Try again</button>
+                </div>
+            </div>
+        </main>
+        <footer class="mt-8 text-center">
+            <p class="text-xs text-slate-600 leading-relaxed px-4">
+                <strong class="text-slate-500">Legal Disclaimer:</strong> This tool is for downloading content you have the legal right to access. 
+                Please respect YouTube&apos;s Terms of Service and copyright laws.
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
