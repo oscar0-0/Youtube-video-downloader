@@ -35,7 +35,12 @@ This application requires the following binaries to be installed and available i
 - **IP Blocking**: YouTube frequently blocks IP addresses from known datacenter ranges (AWS, GCP, Azure). If you experience "403 Forbidden" errors, you may need to provide a cookie file to `yt-dlp` using the `--cookies` flag in `server.js`.
 
 ## Download in Command
+1. Audio only (MP3)
    ```bash
-   npm start
+   yt-dlp -x --audio-format mp3 --remote-components ejs:npm https://youtu.be/replace
+   ```
+2. Video
+   ```bash
+   yt-dlp --remote-components ejs:npm https://youtu.be/replace
    ```
 
