@@ -34,3 +34,8 @@ This application requires the following binaries to be installed and available i
 - **Docker**: A Dockerfile is provided for easy containerization.
 - **IP Blocking**: YouTube frequently blocks IP addresses from known datacenter ranges (AWS, GCP, Azure). If you experience "403 Forbidden" errors, you may need to provide a cookie file to `yt-dlp` using the `--cookies` flag in `server.js`.
 
+## Download in Command
+   ```bash
+   npm start
+   ```
+
