@@ -43,4 +43,9 @@ This application requires the following binaries to be installed and available i
    ```bash
    yt-dlp --remote-components ejs:npm https://youtu.be/replace
    ```
+3. Playlist (MP3)
+   ```
+   yt-dlp -x --audio-format mp3 --embed-thumbnail --embed-metadata -o "%(playlist_title)s/%(playlist_index)02d - %(title)s.%(ext)s" --remote-components ejs:npm "YOUR_PLAYLIST_URL"
+   ```
+
 
